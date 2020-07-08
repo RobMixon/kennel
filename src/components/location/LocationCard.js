@@ -8,7 +8,7 @@ const LocationCard = () => {
           <img src={require("./dog.svg")} alt="My Dog" />
         </picture> */}
         <h3>
-          Name: <span className="card-petname">Doodles</span>
+          Name: <span className="card-petname">Sam</span>
         </h3>
         <p>Breed: Poodle</p>
       </div>
