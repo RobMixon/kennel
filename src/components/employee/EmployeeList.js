@@ -15,6 +15,11 @@ const EmployeeList = () => {
     });
   };
 
+  const deleteEmployee = id => {
+    EmployeeManager.delete(id)
+      .then(() => EmployeeManager.getAll().then(setEmployee));
+  };
+
   // got the animals from the API on the component's first render
   useEffect(() => {
     getEmployee();
@@ -24,7 +29,7 @@ const EmployeeList = () => {
   return (
     <div className="container-cards">
       {employee.map(employees =>
-       <EmployeeCard key={employees.id} employees={employees} />)}
+       <EmployeeCard key={employees.id} employees={employees} deleteEmployee={deleteEmployee}/>)}
     </div>
   );
 };

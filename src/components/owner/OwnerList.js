@@ -15,6 +15,11 @@ const OwnerList = () => {
     });
   };
 
+  const deleteOwner = id => {
+    OwnerManager.delete(id)
+      .then(() => OwnerManager.getAll().then(setOwner));
+  };
+
   // got the animals from the API on the component's first render
   useEffect(() => {
     getOwner();
@@ -24,7 +29,7 @@ const OwnerList = () => {
   return (
     <div className="container-cards">
       {owner.map(owner => 
-      <OwnerCard key={owner.id} owner={owner} />)}
+      <OwnerCard key={owner.id} owner={owner} deleteOwner={deleteOwner}/>)}
     </div>
   );
 };

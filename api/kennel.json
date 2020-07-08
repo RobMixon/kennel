@@ -15,6 +15,6 @@
         { "id": 3, "name": "Nashvegas", "address": "100 Honkey Tonk Way" }
     ],
     "owner": [
-        { "id": 1, "name": "Senor Ben", "title": "Owner"}
+        { "id": 1, "name": "Senor Ben", "animal": "Owner"}
     ]
 }
