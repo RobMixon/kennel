@@ -1,6 +1,7 @@
 import React from "react";
+import './Owner.css'
 
-const OwnerCard = () => {
+const OwnerCard = props => {
   return (
     <div className="card">
       <div className="card-content">
@@ -8,9 +9,11 @@ const OwnerCard = () => {
           <img src={require("")} alt="My Dog" />
         </picture> */}
         <h3>
-          Name: <span className="card-petname">Stan</span>
+          Name: <span className="card-ownerName">
+            {props.owner.name}
+          </span>
         </h3>
-        <p>Owner of: Dan</p>
+        <p>Title: {props.owner.title}</p>
       </div>
     </div>
   );

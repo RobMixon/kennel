@@ -5,7 +5,7 @@ import EmployeeManager from '../../modules/EmployeeManager';
 
 const EmployeeList = () => {
   // The initial state is an empty array
-  const [employees, setEmployee] = useState([]);
+  const [employee, setEmployee] = useState([]);
 
   const getEmployee = () => {
     // After the data comes back from the API, we
@@ -23,7 +23,8 @@ const EmployeeList = () => {
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     <div className="container-cards">
-      {employees.map(employee => <EmployeeCard />)}
+      {employee.map(employees =>
+       <EmployeeCard key={employees.id} employees={employees} />)}
     </div>
   );
 };

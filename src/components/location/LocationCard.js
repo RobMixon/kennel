@@ -1,6 +1,7 @@
 import React from "react";
+import './Location.css';
 
-const LocationCard = () => {
+const LocationCard = props => {
   return (
     <div className="card">
       <div className="card-content">
@@ -8,9 +9,11 @@ const LocationCard = () => {
           <img src={require("./dog.svg")} alt="My Dog" />
         </picture> */}
         <h3>
-          Name: <span className="card-petname">Sam</span>
+          Name: <span className="card-locationName">
+          {props.locations.name}
+          </span>
         </h3>
-        <p>Breed: Poodle</p>
+        <p>Address: {props.locations.address}</p>
       </div>
     </div>
   );
