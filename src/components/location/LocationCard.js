@@ -1,5 +1,6 @@
 import React from "react";
 import './Location.css';
+import { Link } from "react-router-dom";
 
 const LocationCard = props => {
   return (
@@ -15,6 +16,9 @@ const LocationCard = props => {
         </h3>
         <p>Address: {props.locations.address}</p>
         <button type="button" onClick={() => props.deleteLocation(props.locations.id)}>Destroy!</button>
+        <Link to={`/locations/${props.locations.id}`}>
+        <button>Details</button>
+        </Link>
       </div>
     </div>
   );
