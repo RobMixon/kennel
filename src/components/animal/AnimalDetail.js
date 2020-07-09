@@ -25,6 +25,7 @@ const AnimalDetail = props => {
     );
   };
 
+
   return (
     <div className="card">
       <div className="card-content">
