@@ -37,7 +37,7 @@ const LocationList = (props) => {
 </section>
     <div className="container-cards">
       {location.map(locations => 
-      <LocationCard key={locations.id} locations={locations} deleteLocation={deleteLocation}/>)}
+      <LocationCard key={locations.id} locations={locations} deleteLocation={deleteLocation} {...props} />)}
     </div>
     </>
   );

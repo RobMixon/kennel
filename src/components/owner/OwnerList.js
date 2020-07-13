@@ -8,7 +8,6 @@ const OwnerList = (props) => {
 
   const getOwner = () => {
     return OwnerManager.getAll().then(ownerFromAPI => {
-      console.log(ownerFromAPI,"getting owners")
       setOwner(ownerFromAPI)
     });
   };
@@ -36,7 +35,7 @@ const OwnerList = (props) => {
 </section>
     <div className="container-cards">
       {owner.map(owner => 
-      <OwnerCard key={owner.id} owner={owner} deleteOwner={deleteOwner}/>
+      <OwnerCard key={owner.id} owner={owner} deleteOwner={deleteOwner} {...props}/>
       )}
     </div>
     </>
