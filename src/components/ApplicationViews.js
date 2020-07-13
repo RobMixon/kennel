@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
@@ -11,10 +11,17 @@ import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from './employee/EmployeeForm';
 import OwnerList from "./owner/OwnerList";
 import OwnerForm from './owner/OwnerForm';
+import Login from "./auth/Login";
+
+
 
 const ApplicationViews = () => {
+
+  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+
   return (
     <React.Fragment>
+    <Route path="/login" component={Login} />
       <Route
         exact
         path="/"
@@ -22,9 +29,13 @@ const ApplicationViews = () => {
           return <Home />
         }}
       />
-        <Route exact path="/animals" render={(props) => {
-          return <AnimalList {...props} />
-        }} />
+        <Route exact path="/animals" render={props => {
+            if (isAuthenticated()) {
+              return <AnimalList {...props} />
+            } else {
+              return <Redirect to="/login" />
+            }
+          }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           return (
