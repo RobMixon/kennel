@@ -19,7 +19,7 @@ const ApplicationViews = () => {
         exact
         path="/"
         render={props => {
-          return <Home />;
+          return <Home />
         }}
       />
         <Route exact path="/animals" render={(props) => {
@@ -32,16 +32,16 @@ const ApplicationViews = () => {
             animalId={parseInt(props.match.params.animalId)}
             {...props}
           />
-          );
+          )
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
-        }} />;
+        }} />
 
             <Route
         exact path="/locations"
         render={(props) => {
-          return <LocationList {...props} />;
+          return <LocationList {...props} />
         }} />
         <Route path="/locations/:locationsId(\d+)" render= {(props) => {
           return (
@@ -49,31 +49,31 @@ const ApplicationViews = () => {
            locationsId={parseInt(props.match.params.locationsId)}
              {...props}
            />
-          );
+          )
         }} />
                 <Route path="/locations/new" render={(props) => {
           return <LocationForm {...props} />
-        }} />;
+        }} />
             <Route
         exact path="/employees"
         render={(props) => {
-          return <EmployeeList {...props} />;
+          return <EmployeeList {...props} />
         }}
-      />;
+      />
               <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
-        }} />;
+        }} />
             <Route
          exact path="/owner"
         render={props => {
-          return <OwnerList {...props} />;
+          return <OwnerList {...props} />
         }}
-      />;
+      />
               <Route path="/owner/new" render={(props) => {
           return <OwnerForm {...props} />
-        }} />;
+        }} />
     </React.Fragment>
-  );
-};
+  )
+}
 
 export default ApplicationViews;
