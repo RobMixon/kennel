@@ -19,7 +19,7 @@ const AnimalCard = props => {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
 export default AnimalCard;

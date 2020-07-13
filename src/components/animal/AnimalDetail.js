@@ -41,7 +41,7 @@ const AnimalDetail = props => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default AnimalDetail;

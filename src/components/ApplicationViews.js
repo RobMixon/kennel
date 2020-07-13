@@ -2,11 +2,15 @@ import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
 import AnimalList from "./animal/AnimalList";
-import LocationList from "./location/LocationList";
-import EmployeeList from "./employee/EmployeeList";
-import OwnerList from "./owner/OwnerList";
 import AnimalDetail from "./animal/AnimalDetail";
+import AnimalForm from './animal/AnimalForm';
+import LocationList from "./location/LocationList";
 import LocationDetail from "./location/LocationDetail";
+import LocationForm from './location/LocationForm';
+import EmployeeList from "./employee/EmployeeList";
+import EmployeeForm from './employee/EmployeeForm';
+import OwnerList from "./owner/OwnerList";
+import OwnerForm from './owner/OwnerForm';
 
 const ApplicationViews = () => {
   return (
@@ -19,7 +23,7 @@ const ApplicationViews = () => {
         }}
       />
         <Route exact path="/animals" render={(props) => {
-          return <AnimalList />
+          return <AnimalList {...props} />
         }} />
         <Route path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
@@ -30,11 +34,14 @@ const ApplicationViews = () => {
           />
           );
         }} />
+        <Route path="/animals/new" render={(props) => {
+          return <AnimalForm {...props} />
+        }} />;
 
             <Route
         exact path="/locations"
         render={(props) => {
-          return <LocationList />;
+          return <LocationList {...props} />;
         }} />
         <Route path="/locations/:locationsId(\d+)" render= {(props) => {
           return (
@@ -44,18 +51,27 @@ const ApplicationViews = () => {
            />
           );
         }} />
+                <Route path="/locations/new" render={(props) => {
+          return <LocationForm {...props} />
+        }} />;
             <Route
-        path="/Employees"
+        exact path="/employees"
         render={(props) => {
-          return <EmployeeList/>;
+          return <EmployeeList {...props} />;
         }}
-      />
+      />;
+              <Route path="/employees/new" render={(props) => {
+          return <EmployeeForm {...props} />
+        }} />;
             <Route
-        path="/Owners"
-        render={(props) => {
-          return <OwnerList />;
+         exact path="/owner"
+        render={props => {
+          return <OwnerList {...props} />;
         }}
-      />
+      />;
+              <Route path="/owner/new" render={(props) => {
+          return <OwnerForm {...props} />
+        }} />;
     </React.Fragment>
   );
 };
