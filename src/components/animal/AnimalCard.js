@@ -17,7 +17,8 @@ const AnimalCard = props => {
           onClick={() => props.history.push(`/animals/${props.animal.id}/edit`)}>
           Edit
         </button>
-        <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>Discharge</button>
+        {props.deleteAnimal && 
+        <button type="button" onClick={() => props.deleteAnimal(props.animal.id)}>Discharge</button>}
         <Link to={`/animals/${props.animal.id}`}>
         <button>Details</button>
         </Link>
