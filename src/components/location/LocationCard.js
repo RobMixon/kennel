@@ -1,6 +1,6 @@
 import React from "react";
 import './Location.css';
-import { Link } from "react-router-dom";
+
 
 const LocationCard = props => {
   return (
@@ -20,9 +20,8 @@ const LocationCard = props => {
           Edit
         </button>
         <button type="button" onClick={() => props.deleteLocation(props.locations.id)}>Destroy!</button>
-        <Link to={`/locations/${props.locations.id}`}>
-        <button>Details</button>
-        </Link>
+        <button type="button"
+        onClick={() => { props.history.push(`/locations/${props.locations.id}/details`) }}>Details</button>
       </div>
     </div>
   );

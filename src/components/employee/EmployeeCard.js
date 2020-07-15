@@ -14,11 +14,14 @@ const EmployeeCard = props => {
           </span>
         </h3>
         <p>Title: {props.employees.title}</p>
+        
+
         <button type="button"
           onClick={() => props.history.push(`/employees/${props.employees.id}/edit`)}>
           Edit
         </button>
-        <button type="button" onClick={() => props.deleteEmployee(props.employees.id)}>FIRE!</button>
+        {props.deleteEmployee && 
+        <button type="button" onClick={() => props.deleteEmployee(props.employees.id)}>FIRE!</button>}
         <button type="button" onClick={() => 
         { props.history.push(`/employees/${props.employees.id}/details`) }}>
         Details</button>
