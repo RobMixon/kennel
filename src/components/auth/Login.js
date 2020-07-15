@@ -21,6 +21,7 @@ const Login = props => {
       "credentials",
       JSON.stringify(credentials)
     );
+    props.setUser(credentials);
     props.history.push("/");
   }
 

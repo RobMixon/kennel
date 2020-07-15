@@ -19,7 +19,8 @@ const LocationCard = props => {
           onClick={() => props.history.push(`/locations/${props.locations.id}/edit`)}>
           Edit
         </button>
-        <button type="button" onClick={() => props.deleteLocation(props.locations.id)}>Destroy!</button>
+        {props.deleteLocation &&
+        <button type="button" onClick={() => props.deleteLocation(props.locations.id)}>Destroy!</button>}
         <button type="button"
         onClick={() => { props.history.push(`/locations/${props.locations.id}/details`) }}>Details</button>
       </div>
