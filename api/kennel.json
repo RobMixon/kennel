@@ -1,7 +1,19 @@
 {
   "animals": [
     {
+      "id": 1,
+      "name": "Jerry",
+      "breed": "Cat",
+      "employeeId": 2
+    },
+    {
       "id": 2,
+      "name": "Tom",
+      "breed": "mouse",
+      "employeeId": 2
+    },
+    {
+      "id": 3,
       "name": "dozer",
       "breed": "husky",
       "employeeId": 2
@@ -11,33 +23,32 @@
       "name": "Cindy",
       "breed": "Squirrel",
       "employeeId": 4
-    },
-    {
-      "name": "Tom",
-      "breed": "mouse",
-      "id": 5
     }
   ],
   "employees": [
     {
       "id": 1,
       "name": "Rob",
-      "title": "Owner"
+      "title": "Owner",
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Tim",
-      "title": "Supervisor"
+      "title": "Supervisor",
+      "locationId": 3
     },
     {
       "id": 3,
       "name": "Chad",
-      "title": "Lacky"
+      "title": "Lacky",
+      "locationId": 3
     },
     {
       "id": 4,
       "name": "Craig",
-      "title": "Pirate"
+      "title": "Pirate",
+      "locationId": 4
     }
   ],
   "locations": [
