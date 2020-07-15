@@ -27,12 +27,6 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Rob",
-      "title": "Owner",
-      "locationId": 1
-    },
-    {
       "id": 2,
       "name": "Tim",
       "title": "Supervisor",
@@ -53,16 +47,6 @@
   ],
   "locations": [
     {
-      "id": 1,
-      "name": "Nashville North",
-      "address": "100 Super Awesomeville"
-    },
-    {
-      "id": 2,
-      "name": "Nashville South",
-      "address": "100 Not Awesomeville"
-    },
-    {
       "id": 3,
       "name": "Nashvegas",
       "address": "100 Honkey Tonk Way"
@@ -71,6 +55,11 @@
       "name": "Nashville west",
       "address": "500 dont go way",
       "id": 4
+    },
+    {
+      "name": "Nashville South",
+      "address": "12312 adafd",
+      "id": 5
     }
   ],
   "owner": [

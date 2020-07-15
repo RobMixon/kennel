@@ -1,8 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = props => {
+  const handleLogout = () => {
+    props.clearUser()
+    return <Redirect to ="/"></Redirect>
+  }
+
   return (
     <header>
       <h1 className="site-title">
@@ -13,30 +18,34 @@ const NavBar = () => {
       <nav>
         <ul className="container">
           <li>
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
+            <Link className="nav-link"  to="/"> Home </Link>
           </li>
+          {props.hasUser
+            ? <li>
+                <Link className="nav-link" to="/animals"> Animals </Link>
+              </li>
+            : null}
           <li>
-            <Link className="nav-link" to="/animals">
-              Animals
-            </Link>
+            <Link className="nav-link" to="/locations"> Locations </Link>
           </li>
-          <li>
-          <Link className="nav-link" to="/Locations">
-              Locations
-            </Link>
-          </li>
-          <li>
-          <Link className="nav-link" to="/Employees">
-              Employees
-            </Link>
-          </li>
-          <li>
-          <Link className="nav-link" to="/Owner">
-              Owners
-            </Link>
-          </li>
+          {props.hasUser
+            ? <li>
+                <Link className="nav-link" to="/employees"> Employees </Link>
+              </li>
+            : null}
+          {props.hasUser
+            ? <li>
+                <Link className="nav-link" to="/owners"> Owners </Link>
+              </li>
+            : null}
+          {props.hasUser
+            ? <li>
+                <span className="nav-link" onClick={handleLogout}>Logout</span>
+              </li>
+              :<li>
+                <Link className="nav-link" to="/login"> Login </Link>
+              </li>
+            }
         </ul>
       </nav>
     </header>
