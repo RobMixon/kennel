@@ -1,23 +1,28 @@
 import { Route, Redirect } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+import Login from "./auth/Login";
+
 import AnimalList from "./animal/AnimalList";
 import AnimalDetail from "./animal/AnimalDetail";
 import AnimalForm from './animal/AnimalForm';
 import AnimalEditForm from './animal/AnimalEditForm';
+
 import LocationList from "./location/LocationList";
 import LocationDetail from "./location/LocationDetail";
 import LocationForm from './location/LocationForm';
 import LocationEditForm from "./location/LocationEditForm";
 import LocationWithEmployee from "./location/LocationWithEmployee.js";
+
 import EmployeeList from "./employee/EmployeeList";
 import EmployeeForm from './employee/EmployeeForm';
 import EmployeeEditForm from "./employee/EmployeeEditForm";
 import EmployeeWithAnimals from "./employee/EmployeeWithAnimals";
+
 import OwnerList from "./owner/OwnerList";
 import OwnerForm from './owner/OwnerForm';
 import OwnerEditForm from "./owner/OwnerEditForm";
-import Login from "./auth/Login";
+
 
 
 
